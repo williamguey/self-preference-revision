@@ -1,0 +1,36 @@
+====================================================================
+PILOT v2 CHECKPOINT (before decider)
+====================================================================
+(a) drafts failing >=1 instruction: 35
+    usable drafts (failing AND have exactly one verified GOOD fix): 27
+    usable by AUTHOR model: {'openai/gpt-4o-mini': 15, 'anthropic/claude-3.5-haiku': 12}
+
+(b) author/fresh assignment per usable draft:
+     idx   key mode    AUTHOR (decides X)         FRESH (decides Z)          target_constraint
+       0  2422 normal  openai/gpt-4o-mini         anthropic/claude-3.5-haiku change_case:english_capital
+       1  3350 normal  openai/gpt-4o-mini         anthropic/claude-3.5-haiku detectable_content:number_placeholders
+       2  3327 normal  openai/gpt-4o-mini         anthropic/claude-3.5-haiku keywords:frequency
+       4  3409 normal  openai/gpt-4o-mini         anthropic/claude-3.5-haiku detectable_format:number_highlighted_sections
+       5  3619 normal  openai/gpt-4o-mini         anthropic/claude-3.5-haiku detectable_content:number_placeholders
+       7  1508 normal  openai/gpt-4o-mini         anthropic/claude-3.5-haiku keywords:existence
+       8  2765 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku change_case:english_lowercase
+      10  1379 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku keywords:existence
+      11  1436 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku keywords:forbidden_words
+      12  1713 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku keywords:frequency
+      13  3327 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku keywords:frequency
+      15  1233 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku keywords:frequency
+      16  3409 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku detectable_format:number_highlighted_sections
+      17  3084 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku startend:end_checker
+      18  3456 rushed  openai/gpt-4o-mini         anthropic/claude-3.5-haiku detectable_format:number_highlighted_sections
+      19  3479 normal  anthropic/claude-3.5-haiku openai/gpt-4o-mini         keywords:forbidden_words
+      20  1379 normal  anthropic/claude-3.5-haiku openai/gpt-4o-mini         detectable_format:number_highlighted_sections
+      21  1571 normal  anthropic/claude-3.5-haiku openai/gpt-4o-mini         change_case:english_lowercase
+      23  3409 normal  anthropic/claude-3.5-haiku openai/gpt-4o-mini         startend:quotation
+      25  3619 normal  anthropic/claude-3.5-haiku openai/gpt-4o-mini         detectable_content:number_placeholders
+      26  3035 normal  anthropic/claude-3.5-haiku openai/gpt-4o-mini         change_case:english_lowercase
+      28  3456 normal  anthropic/claude-3.5-haiku openai/gpt-4o-mini         detectable_format:number_highlighted_sections
+      29  1379 rushed  anthropic/claude-3.5-haiku openai/gpt-4o-mini         detectable_format:number_highlighted_sections
+      30  1571 rushed  anthropic/claude-3.5-haiku openai/gpt-4o-mini         change_case:english_lowercase
+      31  1713 rushed  anthropic/claude-3.5-haiku openai/gpt-4o-mini         detectable_format:number_highlighted_sections
+      32  3327 rushed  anthropic/claude-3.5-haiku openai/gpt-4o-mini         keywords:frequency
+      33  3084 rushed  anthropic/claude-3.5-haiku openai/gpt-4o-mini         startend:end_checker

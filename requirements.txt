@@ -1,0 +1,14 @@
+# Python 3.11 recommended.
+# The OpenRouter client (scripts/or_client.py) uses only the standard library.
+# These are needed by the official IFEval checker and the dataset loader.
+
+huggingface_hub>=0.20      # download the IFEval jsonl directly (see data/README.md)
+nltk>=3.8                  # official checker tokenization (run: nltk.download('punkt'))
+langdetect>=1.0.9          # language-constraint checks in the official checker
+immutabledict>=2.0         # official checker registry
+absl-py>=1.0               # official checker utilities
+
+# NOTE: the `datasets` library is intentionally NOT required. In our environment
+# datasets 2.12.0 is incompatible with fsspec 2026.2.0 (a '**' glob error), so the
+# IFEval data is loaded straight from the HuggingFace jsonl via huggingface_hub.
+# See data/README.md.

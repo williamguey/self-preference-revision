@@ -1,0 +1,33 @@
+# ---- secrets (NEVER commit) ----
+.env
+.env.*
+*.key
+*_key*
+*secret*
+secrets*
+openrouter*.txt
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- caches / downloaded data (re-fetched at runtime) ----
+.cache/
+**/.cache/
+ifeval_input_data.jsonl
+**/ifeval_input_data.jsonl
+nltk_data/
+
+# ---- LaTeX build artifacts (keep main.pdf) ----
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/*.toc

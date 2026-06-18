@@ -1,0 +1,790 @@
+[
+  {
+    "draft_idx": 3,
+    "key": 2422,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Write a joke about a startup that sells dog food in a song. Your entire response should be in English, and in all capital letters. Your answer must contain a title, wrapped in double angular brackets, i.e. <<title>>.",
+    "instruction_id_list": [
+      "change_case:english_capital",
+      "detectable_format:title"
+    ],
+    "kwargs": [
+      {},
+      {}
+    ],
+    "draft": "<<THE BARKER'S BLUES>>\n\n\ud83c\udfb6 IN A STARTUP LAND, WITH A DOG FOOD PLAN,  \nSELLING TREATS TO FIDO, YES WE CAN!  \nBUT EVERY TIME WE TRY TO MAKE A SALE,  \nTHEY JUST BARK AND WAG, \"WHAT'S IN THE TALE?\" \ud83c\udfb6  \n\n\ud83c\udfb6 WE\u2019VE GOT KIBBLE AND CANS, ALL THE FLAVORS YOU NEED,  \nBUT OUR MARKETING STRATEGY\u2019S A REAL DOGGONE SEED!  \nWHEN WE ASK FOR FEEDBACK, THEY JUST LOOK AWAY,  \nGUESS THEY PREFER A BONE TO THE CEO's SAY! \ud83c\udfb6  \n\n\ud83c\udfb6 WE'RE TRYING TO FETCH SOME BIG VENTURE CASH,  \nBUT OUR SALES PITCH IS MET WITH A GROWL AND A FLASH!  \nSO IF YOU WANT SALES TO INCREASE AND NOT RUFF,  \nJUST REMEMBER IN STARTUPS, DOGS CALL THE BLUFF! \ud83c\udfb6  \n\n\ud83d\udc3e SO JOIN THE PACK, AND LET'S TAKE A CHANCE,  \nWITH A HOWL AND A WAG, WE'LL MAKE THEM DANCE! \ud83d\udc3e  \n",
+    "per_instruction": [
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 7,
+    "key": 3350,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "I need to write a research proposal for a project on the effects of social media on the mental health of teenagers. Please only write short sentences, and don't use any commas in your entire response. Include at least five placeholder represented by square brackets, such as [website].",
+    "instruction_id_list": [
+      "punctuation:no_comma",
+      "detectable_content:number_placeholders"
+    ],
+    "kwargs": [
+      {},
+      {
+        "num_placeholders": 5
+      }
+    ],
+    "draft": "Title: The Effects of Social Media on the Mental Health of Teenagers\n\nIntroduction: Social media is a significant part of teenage life. This project aims to explore its impact. Mental health is a growing concern among teens. Understanding this relationship is essential.\n\nResearch Questions: What are the positive effects of social media on teenagers? What are the negative effects of social media on teenagers? How does social media use affect self-esteem? What role does social media play in anxiety and depression? How can we promote healthy social media habits?\n\nMethodology: This study will use surveys to gather data. Participants will be recruited from [school name]. The survey will include questions about social media use and mental health. Data will be analyzed using [software name]. Results will be compared to findings from [previous study].\n\nExpected Outcomes: This research will provide insights into social media's impact. It may identify trends in mental health issues. Recommendations will be made for parents and educators. The findings will be shared through [website]. \n\nConclusion: Understanding social media's effects is crucial. This project aims to contribute valuable information. It will help support the mental health of teenagers.",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 13,
+    "key": 1843,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Create an English name for a luxury real estate company that sells beachfront homes. All letters in your response must be lower case letters. Also, please put double quotation marks around your entire response.",
+    "instruction_id_list": [
+      "change_case:english_lowercase",
+      "startend:quotation"
+    ],
+    "kwargs": [
+      {},
+      {}
+    ],
+    "draft": "\"coastal elegance estates\"",
+    "per_instruction": [
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 14,
+    "key": 1379,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Write a limerick about a woman named Sarah who lives in a town where it's always 90\u00b0F. Highlight at least 6 sections in your answer with markdown, example: *highlighted section*. Mention the name Sarah only once.",
+    "instruction_id_list": [
+      "detectable_format:number_highlighted_sections",
+      "keywords:frequency",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {
+        "num_highlights": 6
+      },
+      {
+        "relation": "less than",
+        "keyword": "sarah",
+        "frequency": 2
+      },
+      {
+        "keywords": [
+          "sarah"
+        ]
+      }
+    ],
+    "draft": "In a town where the sun's always *bright*,  \nLived a woman who found it *just right*.  \nWith her ice cream in hand,  \nShe'd stroll through the sand,  \nIn the heat, she was never *in fright*.  \n\nEach day brought a *scorching delight*,  \nAs she danced under skies *so light*.  \nThough the weather was *hot*,  \nShe loved every spot,  \nIn her town where the sun shone *so bright*.  \n\nWith a smile that could *sparkle and gleam*,  \nShe\u2019d sip lemonade by the *stream*.  \nThough the temp was a *baker*,  \nShe was never a *quaker*,  \nIn her world, it was all like a *dream*.  ",
+    "per_instruction": [
+      true,
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 16,
+    "key": 1436,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Write a story about commandos who are in the middle of the night in a sector. It should be in English, and no capital letters are allowed. The story should not include keywords \"coop\", \"killings\", \"dead\", \"night\".",
+    "instruction_id_list": [
+      "change_case:english_lowercase",
+      "keywords:forbidden_words"
+    ],
+    "kwargs": [
+      {},
+      {
+        "forbidden_words": [
+          "coop",
+          "killings",
+          "dead",
+          "night"
+        ]
+      }
+    ],
+    "draft": "in the stillness of a shadowed sector, a group of commandos moved with silent precision. their dark uniforms blended seamlessly into the surroundings, each figure a whisper against the cool air. the moon hung high, casting a pale glow that danced upon their faces, illuminating eyes focused with determination.\n\nthe leader, known only as specter, signaled for a halt. they crouched behind a crumbling wall, the remnants of a long-forgotten structure. ahead lay a compound, its perimeter guarded by watchful eyes. specter studied the terrain, calculating their path through the maze of obstacles.\n\n\u201cwe go in low and quiet,\u201d he instructed, his voice barely above a murmur. the others nodded, understanding the gravity of their mission. each had trained for this moment, honing skills that would now be put to the ultimate test.\n\nwith a synchronized movement, the team broke into smaller pairs, maneuvering through the darkness. shadows blended with shadows, as they navigated around flickering lights and the occasional patrol. every sound was amplified\u2014the rustle of leaves, the distant bark of a dog, the faint hum of machinery.\n\nas they approached the compound, specter signaled for another pause. they crouched behind a stack of crates, peering through the gaps. inside, the faint outline of figures could be seen gathered around a table, their voices low but urgent. the commandos exchanged glances, knowing this was the moment they had trained for.\n\n\u201con my mark,\u201d specter whispered, his heart racing. anticipation hung heavy in the air as he counted down silently. three\u2026 two\u2026 one.\n\nthe team sprang into action, each pair executing their roles with practiced fluidity. they slipped through the shadows, a coordinated dance of agility and focus. the element of surprise was theirs, and they pressed forward, taking down obstacles with swift efficiency.\n\nas they infiltrated the compound, the atmosphere shifted. the tension was palpable, the stakes higher than ever. the commandos moved deeper, aware that time was of the essence. they reached the central area, where plans and intel lay unguarded.\n\nwith quick hands, they gathered the crucial information, ensuring their mission was a success. just as they were about to retreat, an alarm blared, shattering the silence. the compound erupted into chaos as guards scrambled, their confusion a fleeting advantage for the commandos.\n\n\u201ctime to go!\u201d specter shouted, leading the team back through the labyrinth of corridors. they ran, adrenaline propelling them forward as echoes of footsteps trailed behind. the night air welcomed them as they burst through the exit, the cool breeze a stark contrast to the heated urgency of their escape.\n\none by one, they crossed into the safety of the shadows, blending into the landscape that had once seemed so daunting. hearts still racing, they regrouped, exchanging silent nods of camaraderie. they had accomplished what they set out to do, and as they melted away into the darkness, the sense of victory was palpable.\n\nin the end, it wasn\u2019t just a mission completed; it was a testament to their training, their resolve, and the unbreakable bond forged in the heart of uncertainty. as they disappeared into the unseen, the sector lay quiet once more, unaware of the storm that had just passed.",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 18,
+    "key": 3327,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Write an essay about a snowfall, but in the style of Alex Jones and include the line \"dammit\". The word \"fake\" should appear 6 or 7 times in your entire response.",
+    "instruction_id_list": [
+      "keywords:existence",
+      "keywords:frequency",
+      "keywords:frequency"
+    ],
+    "kwargs": [
+      {
+        "keywords": [
+          "dammit"
+        ]
+      },
+      {
+        "relation": "at least",
+        "keyword": "fake",
+        "frequency": 6
+      },
+      {
+        "relation": "less than",
+        "keyword": "fake",
+        "frequency": 8
+      }
+    ],
+    "draft": "**The Snowfall: A Fake Blanket of Deception**\n\nLadies and gentlemen, let me tell you something about the recent snowfall that blanketed our cities like a deceptive veil. What you see outside your window, this pristine white wonderland, is not just a natural phenomenon; it\u2019s a carefully orchestrated event designed to distract us from the real issues at hand. Dammit! I know what you\u2019re thinking: \u201cIt\u2019s just snow! What\u2019s the big deal?\u201d But that\u2019s where you\u2019re wrong. This is part of a larger agenda, a fake narrative pushed by the mainstream media that we need to unravel.\n\nAs the snowflakes fall, glistening under the streetlights, they create an illusion of beauty and peace. It\u2019s a scene that would make you think everything is right in the world. But let\u2019s be real for a second. This snowfall, this frozen precipitation, is just a cover-up! They want us to be mesmerized by the beauty of winter while they sneak in their fake policies and fake news behind the scenes. It\u2019s as if they\u2019re trying to freeze our minds along with the ground beneath us. \n\nLook at the way society reacts to snowfall. People rush to social media, posting pictures and videos of their winter wonderland. \u201cLook at this beautiful snowfall!\u201d they say, oblivious to the fact that this is all part of the grand illusion. It\u2019s a fake distraction from the real issues plaguing our country. While you\u2019re out there making snowmen and sipping hot cocoa, they\u2019re shoving legislation down our throats that erodes our freedoms. It\u2019s a classic misdirection, folks!\n\nNow, I\u2019m not saying that snow isn\u2019t real. I\u2019m not here to promote a fake narrative that denies the existence of winter. No, no. What I\u2019m saying is that this snowfall serves a purpose\u2014a purpose that is not in your best interest. They want us to focus on the trivial while they engage in their nefarious activities. It\u2019s all about control, and the snowfall is just another tool in their arsenal. \n\nImagine the children playing in the snow, throwing snowballs and laughing. It\u2019s a beautiful sight, but we must remember that this joy can easily be weaponized. \u201cLook at the snow! Look how lovely it is!\u201d But underneath that fluffy surface lies the cold truth: our liberties are being chipped away, and the snowfall is but a fake cover for the real storm brewing in our political landscape.\n\nAs you step outside, take a moment to appreciate the beauty, but don\u2019t get lost in it. Remember that every flake that falls is part of a system designed to keep you distracted. This snowfall, like so many other things, can be a fake comfort that lulls us into complacency. We must stay vigilant. We must question everything, even the things that seem harmless. \n\nSo, the next time you\u2019re out enjoying the snow, remember to look beyond the surface. Don\u2019t let the beauty of this fake winter wonderland blind you from the truth. Dammit! We have to wake up! The snowfall is merely a cover for the real battles we face. Stay informed, stay aware, and don\u2019t let the fake narratives of the elite pull the wool over your eyes. It\u2019s time to dig deeper, to peel back the layers of this deception, and to confront the reality that lies beneath the snow.",
+    "per_instruction": [
+      true,
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 21,
+    "key": 2216,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Write a detailed proposal in list format for the university's ethics board for a research project that investigates the effect of eye colour on the likelihood of being a successful salesperson. Remember that the customer is always right. Your entire response should be in English, and in all lowercase letters. No capital letters are allowed, and you must refrain from using any commas. At the end of your response, please explicitly add a postscript starting with P.P.S",
+    "instruction_id_list": [
+      "change_case:english_lowercase",
+      "punctuation:no_comma",
+      "detectable_content:postscript"
+    ],
+    "kwargs": [
+      {},
+      {},
+      {
+        "postscript_marker": "P.P.S"
+      }
+    ],
+    "draft": "**research project proposal: investigating the effect of eye colour on sales success**\n\n1. **project title**  \n   investigating the effect of eye colour on the likelihood of being a successful salesperson\n\n2. **introduction**  \n   this research aims to explore the correlation between eye colour and sales performance  \n   understanding this relationship may provide insights into sales techniques and customer perception  \n   the findings could have implications for recruitment and training in sales roles\n\n3. **background**  \n   previous studies have examined various factors influencing sales success  \n   however little research exists on the impact of physical attributes such as eye colour  \n   eye colour may influence first impressions and customer trust\n\n4. **objectives**  \n   to determine if there is a statistical correlation between eye colour and sales performance  \n   to explore how customers perceive salespersons with different eye colours  \n   to assess whether eye colour affects customer trust and engagement levels\n\n5. **methodology**  \n   a. **participants**  \n      recruit 200 salespersons from various industries  \n      ensure a balanced representation of different eye colours  \n\n   b. **data collection**  \n      conduct surveys to gather eye colour information and sales performance metrics  \n      include customer feedback on salespersons with different eye colours  \n\n   c. **analysis**  \n      use statistical methods to analyze the relationship between eye colour and sales success  \n      compare performance metrics across different eye colour groups  \n\n6. **ethical considerations**  \n   a. ensure informed consent from all participants  \n   b. maintain confidentiality of participant data  \n   c. provide participants with the right to withdraw from the study at any time  \n   d. ensure that findings are reported objectively without bias  \n\n7. **potential impact**  \n   findings could inform hiring practices in sales roles  \n   may lead to enhanced training programs focusing on customer perception  \n   contribute to the broader understanding of psychological factors in sales\n\n8. **timeline**  \n   a. recruitment of participants - months 1-2  \n   b. data collection - months 3-4  \n   c. data analysis - months 5-6  \n   d. report writing and dissemination of findings - months 7-8  \n\n9. **budget**  \n   outline costs for participant recruitment tools for data collection and statistical software  \n   funding sources to be identified through university grants and potential industry partnerships  \n\n10. **conclusion**  \n   this research project seeks to uncover the intriguing relationship between eye colour and sales success  \n   findings could have significant implications for the sales industry and customer relations\n\nP.P.S this proposal aims to maintain a focus on ethical research practices ensuring that all participants are treated with respect and dignity throughout the study",
+    "per_instruction": [
+      false,
+      true,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 23,
+    "key": 1233,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "How many feet off the ground was the tallest skyscraper in the world in 2000? Please include only the main points in your answer. Finish your response with the exact phrase of \"Is there anything else I can help with?\" with no other words after the word \"with\". Mention the word \"skyscraper\" for at least 8 times.",
+    "instruction_id_list": [
+      "startend:end_checker",
+      "keywords:frequency"
+    ],
+    "kwargs": [
+      {
+        "end_phrase": "Is there anything else I can help with?"
+      },
+      {
+        "relation": "at least",
+        "keyword": "skyscraper",
+        "frequency": 8
+      }
+    ],
+    "draft": "The tallest skyscraper in the world in 2000 was the Taipei 101. It stood at 1,667 feet (508 meters) tall. This skyscraper was notable for its unique design and height. Taipei 101 held the title of the tallest skyscraper until 2009. Skyscrapers like Taipei 101 often symbolize economic growth and architectural innovation. The construction of this skyscraper showcased advancements in engineering and design. In 2000, the Taipei 101 was a significant achievement in the world of skyscrapers. \n\nIs there anything else I can help with?",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 24,
+    "key": 3409,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Can you write me a slogan for my video game project? The project aims to create a very funny fighting game. Please wrap your entire response with double quotation marks. Also, highlight at least three sections in your answer in markdown format using *highlighted text*. Such as: *Funny Fighting*.",
+    "instruction_id_list": [
+      "startend:quotation",
+      "detectable_format:number_highlighted_sections"
+    ],
+    "kwargs": [
+      {},
+      {
+        "num_highlights": 3
+      }
+    ],
+    "draft": "\"Get ready to *laugh* your way to victory in the ultimate *Funny Fighting* showdown, where the only thing more outrageous than the battles is the humor!\"",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 28,
+    "key": 3084,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "normal",
+    "prompt": "Write a weird and short haiku about the state of Gujarat in India. Don't use any commas in your entire response. End your response with the EXACT phrase of \"in India.\"",
+    "instruction_id_list": [
+      "punctuation:no_comma",
+      "startend:end_checker"
+    ],
+    "kwargs": [
+      {},
+      {
+        "end_phrase": "in India."
+      }
+    ],
+    "draft": "Saffron winds whisper  \nDesert dreams dance with the sea  \nGujarat's heart beats in India",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 32,
+    "key": 2908,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "rushed",
+    "prompt": "What are the components that make a successful person? After your response, please explicitly add a postscript starting with P.P.S Your entire response should be in English and in all capital letters.",
+    "instruction_id_list": [
+      "detectable_content:postscript",
+      "change_case:english_capital"
+    ],
+    "kwargs": [
+      {
+        "postscript_marker": "P.P.S"
+      },
+      {}
+    ],
+    "draft": "SUCCESSFUL PEOPLE TYPICALLY POSSESS THE FOLLOWING COMPONENTS: \n\n1. CLEAR GOALS\n2. STRONG WORK ETHIC\n3. RESILIENCE\n4. POSITIVE MINDSET\n5. EFFECTIVE COMMUNICATION SKILLS\n6. CONTINUOUS LEARNING\n7. NETWORKING ABILITIES\n8. TIME MANAGEMENT\n9. ADAPTABILITY\n10. SELF-DISCIPLINE\n\nP.P.S SUCCESS IS SUBJECTIVE AND CAN VARY BASED ON INDIVIDUAL VALUES AND ASPIRATIONS.",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 38,
+    "key": 2765,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "rushed",
+    "prompt": "Write a proposal for a research project on the impact of the liberian civil war on the country's economy. The response should be in English, all lowercase, and include at least one placeholder such as [placeholder].",
+    "instruction_id_list": [
+      "change_case:english_lowercase",
+      "detectable_content:number_placeholders"
+    ],
+    "kwargs": [
+      {},
+      {
+        "num_placeholders": 1
+      }
+    ],
+    "draft": "title: proposal for research on the impact of the liberian civil war on the country's economy\n\nintroduction:  \nthis research project aims to examine the economic repercussions of the liberian civil war (1989-2003) on liberia's development, focusing on key sectors such as agriculture, infrastructure, and employment. understanding these impacts is crucial for shaping future policies and rebuilding efforts.\n\nobjectives:  \n1. to analyze the pre-war economic conditions in liberia.  \n2. to assess the immediate economic consequences of the civil war.  \n3. to evaluate the long-term effects on various economic sectors.  \n4. to explore the relationship between war-induced displacement and economic decline.  \n5. to propose recommendations for economic recovery and rebuilding.\n\nmethodology:  \n- qualitative analysis through interviews with local economists, historians, and residents.  \n- quantitative analysis of economic data from [placeholder] to track changes over time.  \n- case studies of specific regions affected by the war.\n\nexpected outcomes:  \nthis research will provide a comprehensive understanding of how the liberian civil war shaped the country's economy, offering valuable insights for policymakers, NGOs, and future research.\n\ntimeline:  \nthe project will be conducted over [placeholder] months, with key milestones for data collection, analysis, and reporting.\n\nbudget:  \na detailed budget will be prepared, outlining costs for research materials, travel, and personnel.\n\nconclusion:  \nthis research is essential for addressing the lingering economic challenges in liberia and supporting sustainable development in the post-war context.",
+    "per_instruction": [
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 44,
+    "key": 1379,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "rushed",
+    "prompt": "Write a limerick about a woman named Sarah who lives in a town where it's always 90\u00b0F. Highlight at least 6 sections in your answer with markdown, example: *highlighted section*. Mention the name Sarah only once.",
+    "instruction_id_list": [
+      "detectable_format:number_highlighted_sections",
+      "keywords:frequency",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {
+        "num_highlights": 6
+      },
+      {
+        "relation": "less than",
+        "keyword": "sarah",
+        "frequency": 2
+      },
+      {
+        "keywords": [
+          "sarah"
+        ]
+      }
+    ],
+    "draft": "In a town where it's *always hot*,  \nLived a woman who *sweated a lot*.  \nWith a sunhat so wide,  \nShe'd stroll with great pride,  \nSipping lemonade, *cooling her spot*.  \n\nIn the *heat of the day*,  \nShe would find time to play,  \nWith kids in the park,  \nTill the skies turned to dark,  \nThen she\u2019d head home without *delay*.  \n\nThough the *thermometer soared*,  \nShe was never bored,  \nWith her friends by her side,  \nIn the warmth they would bide,  \nAnd the *fun they all stored*.  \n\nSo if ever you *visit that place*,  \nWhere the sun always *shines with a grace*,  \nRemember her name,  \nIn the heat, she found fame,  \nIn the town where *sweat's part of the race*.  ",
+    "per_instruction": [
+      true,
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 51,
+    "key": 2216,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "rushed",
+    "prompt": "Write a detailed proposal in list format for the university's ethics board for a research project that investigates the effect of eye colour on the likelihood of being a successful salesperson. Remember that the customer is always right. Your entire response should be in English, and in all lowercase letters. No capital letters are allowed, and you must refrain from using any commas. At the end of your response, please explicitly add a postscript starting with P.P.S",
+    "instruction_id_list": [
+      "change_case:english_lowercase",
+      "punctuation:no_comma",
+      "detectable_content:postscript"
+    ],
+    "kwargs": [
+      {},
+      {},
+      {
+        "postscript_marker": "P.P.S"
+      }
+    ],
+    "draft": "1. title of the project  \n   - investigating the effect of eye colour on the likelihood of being a successful salesperson\n\n2. research objectives  \n   - to determine if there is a correlation between eye colour and sales performance  \n   - to analyze how eye colour impacts customer perceptions of salespeople  \n   - to explore other factors that may influence sales success alongside eye colour  \n\n3. background and rationale  \n   - previous studies suggest that physical appearance can affect interpersonal interactions  \n   - eye colour is a visible characteristic that may influence first impressions  \n   - understanding this relationship could provide insights for training and hiring in sales  \n\n4. methodology  \n   - sample size of 200 salespeople from various industries  \n   - data collection through surveys and sales performance metrics  \n   - analysis of customer feedback regarding sales interactions  \n\n5. ethical considerations  \n   - informed consent will be obtained from all participants  \n   - participants will remain anonymous to ensure privacy  \n   - results will be used solely for academic purposes  \n\n6. potential benefits  \n   - insights into effective sales strategies  \n   - contribution to the understanding of human interactions in sales  \n   - guidance for recruiters and training programs  \n\n7. timeline  \n   - month 1: recruitment and consent  \n   - month 2-3: data collection  \n   - month 4: data analysis  \n   - month 5: report writing and dissemination  \n\n8. budget  \n   - funding for materials and participant incentives  \n   - potential costs for software for data analysis  \n\n9. anticipated outcomes  \n   - publication of findings in a peer-reviewed journal  \n   - presentations at academic conferences  \n\n10. collaboration  \n   - potential partnerships with psychology and business departments  \n\nP.P.S this research aims to respect the principle that the customer is always right by focusing on the dynamics of sales interactions.",
+    "per_instruction": [
+      false,
+      true,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 57,
+    "key": 1825,
+    "generator": "openai/gpt-4o-mini",
+    "mode": "rushed",
+    "prompt": "Explain Generative Adversarial Networks (GANs) to me using bullet points. Do not contain any commas in your response. End your response with a postscript indicated by P.P.S\nInclude the keywords \"lacking\", \"model\", \"performance\", \"quality\", \"architecture\".",
+    "instruction_id_list": [
+      "punctuation:no_comma",
+      "detectable_content:postscript",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {},
+      {
+        "postscript_marker": "P.P.S"
+      },
+      {
+        "keywords": [
+          "lacking",
+          "model",
+          "performance",
+          "quality",
+          "architecture"
+        ]
+      }
+    ],
+    "draft": "- GANs consist of two neural networks: generator and discriminator  \n- The generator creates synthetic data samples  \n- The discriminator evaluates the authenticity of the samples  \n- Both networks compete against each other in a zero-sum game  \n- The generator aims to improve the quality of generated samples  \n- The discriminator seeks to become better at identifying real vs fake data  \n- Performance of GANs can be lacking if architecture is not well designed  \n- Successful GANs require careful tuning of hyperparameters  \n- Applications include image generation video creation and data augmentation  \n\nP.P.S. Understanding GANs opens doors to innovative AI applications.",
+    "per_instruction": [
+      true,
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 61,
+    "key": 1779,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "normal",
+    "prompt": "Write an itinerary for a trip to a grocery store in Lima to buy some local goods. Make the itinerary funny, write it in all capital letters and include the keywords 'DISGUSTING', 'DELICIOUS', 'BAD', and 'GOOD'.",
+    "instruction_id_list": [
+      "change_case:english_capital",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {},
+      {
+        "keywords": [
+          "disgusting",
+          "delicious",
+          "bad",
+          "good"
+        ]
+      }
+    ],
+    "draft": "LIMA GROCERY STORE ADVENTURE ITINERARY:\n\n9:00 AM - ARRIVE AT MEGA SUPERMARKET WITH EMPTY STOMACH AND MAXIMUM ENTHUSIASM\n\n9:05 AM - IMMEDIATELY GET DISTRACTED BY WEIRD PERUVIAN POTATO SECTION (SO MANY COLORS, IT'S DISGUSTING BUT FASCINATING)\n\n9:15 AM - LOCATE DELICIOUS PISCO SECTION AND SAMPLE SOME LOCAL SPIRITS (GOOD DECISION, DEFINITELY)\n\n9:30 AM - NAVIGATE PRODUCE AREA, ACCIDENTALLY KNOCK OVER DISPLAY OF EXOTIC FRUITS (BAD COORDINATION, SORRY NOT SORRY)\n\n9:45 AM - DISCOVER AMAZING SECTION OF ANDEAN CHEESES THAT SMELL LIKE HEAVEN BUT LOOK LIKE SOMETHING POTENTIALLY DISGUSTING\n\n10:00 AM - PURCHASE QUINOA, FEEL EXTREMELY SOPHISTICATED AND HEALTHY\n\n10:15 AM - GRAB SOME DELICIOUS LUCUMA ICE CREAM (BECAUSE WHY NOT?)\n\n10:30 AM - CHECKOUT LINE DANCE WITH OVERFLOWING CART OF RANDOM PERUVIAN SNACKS\n\n11:00 AM - EXIT STORE VICTORIOUS, SLIGHTLY CONFUSED, BUT TOTALLY SATISFIED WITH CULINARY EXPEDITION!\n\nMISSION ACCOMPLISHED! \ud83c\uddf5\ud83c\uddea\ud83d\uded2",
+    "per_instruction": [
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 73,
+    "key": 1843,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "normal",
+    "prompt": "Create an English name for a luxury real estate company that sells beachfront homes. All letters in your response must be lower case letters. Also, please put double quotation marks around your entire response.",
+    "instruction_id_list": [
+      "change_case:english_lowercase",
+      "startend:quotation"
+    ],
+    "kwargs": [
+      {},
+      {}
+    ],
+    "draft": "\"seascape estates\"",
+    "per_instruction": [
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 74,
+    "key": 1379,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "normal",
+    "prompt": "Write a limerick about a woman named Sarah who lives in a town where it's always 90\u00b0F. Highlight at least 6 sections in your answer with markdown, example: *highlighted section*. Mention the name Sarah only once.",
+    "instruction_id_list": [
+      "detectable_format:number_highlighted_sections",
+      "keywords:frequency",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {
+        "num_highlights": 6
+      },
+      {
+        "relation": "less than",
+        "keyword": "sarah",
+        "frequency": 2
+      },
+      {
+        "keywords": [
+          "sarah"
+        ]
+      }
+    ],
+    "draft": "Here's a limerick about Sarah and her hot town:\n\n*There once was a gal* from the heat,\n*Whose town was a tropical treat*,\n    Where **ninety degrees**\n    Would *melt all her trees*,\nAnd **sweat was her primary** feat!",
+    "per_instruction": [
+      false,
+      true,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 75,
+    "key": 1571,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "normal",
+    "prompt": "Compose a poem that has the word \"land\" and \"river\". It should be about nature and love. Also, the word \"forest\" should appear at least 3 times, and be written in English, with all letters lowercased.",
+    "instruction_id_list": [
+      "keywords:frequency",
+      "change_case:english_lowercase",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {
+        "relation": "at least",
+        "keyword": "forest",
+        "frequency": 3
+      },
+      {},
+      {
+        "keywords": [
+          "land",
+          "river"
+        ]
+      }
+    ],
+    "draft": "Here's a poem meeting your specifications:\n\nWhispers of the Wandering Heart\n\nBeside the river's gentle flow,\nWhere forest shadows softly grow,\nI trace the contours of this land,\nWith love as tender as my hand.\n\nThe forest breathes its ancient song,\nWhere roots and rivers move along,\nEach path a story yet untold,\nOf passion wild and love's pure hold.\n\nIn forest depths, my heart takes wing,\nWhere nature's rhythms softly sing,\nThe landscape holds us, you and I,\nBeneath the ever-changing sky.\n\nOur love, like water, finds its way\nThrough rocky ground and soft array,\nThe forest watches, calm and still,\nAs emotions rise and gently fill.\n\nThis land, this river, and the trees,\nEmbrace our love with gentle ease,\nA testament to what we share,\nA bond beyond compare.",
+    "per_instruction": [
+      true,
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 76,
+    "key": 1436,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "normal",
+    "prompt": "Write a story about commandos who are in the middle of the night in a sector. It should be in English, and no capital letters are allowed. The story should not include keywords \"coop\", \"killings\", \"dead\", \"night\".",
+    "instruction_id_list": [
+      "change_case:english_lowercase",
+      "keywords:forbidden_words"
+    ],
+    "kwargs": [
+      {},
+      {
+        "forbidden_words": [
+          "coop",
+          "killings",
+          "dead",
+          "night"
+        ]
+      }
+    ],
+    "draft": "here's a story about commandos in a tense sector:\n\nthe team moved silently through the shadowy terrain, their dark gear blending with the moonless landscape. sergeant ramirez signaled to his squad with quick hand gestures, indicating they should spread out and maintain low profiles.\n\nprivate jenkins adjusted his night vision goggles, scanning the surrounding area for any unusual movement. the air was thick with tension, and every rustle of leaves made the soldiers tense.\n\n\"sector looks clear,\" whispered corporal martinez into her communication device. the team had been tracking enemy movements for hours, waiting for the precise moment to execute their mission.\n\nsuddenly, a distant sound caught their attention. ramirez froze, raising his fist to halt the team's progression. something was moving in the distance, barely perceptible but definitely present.\n\nthe commandos crouched low, weapons ready. their breathing was controlled and quiet, each member of the squad prepared for potential conflict. they had trained for moments like these, where split-second decisions could mean survival or failure.\n\ntension mounted as they waited, muscles coiled like springs, ready to react to any sudden change in their environment.",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 78,
+    "key": 3327,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "normal",
+    "prompt": "Write an essay about a snowfall, but in the style of Alex Jones and include the line \"dammit\". The word \"fake\" should appear 6 or 7 times in your entire response.",
+    "instruction_id_list": [
+      "keywords:existence",
+      "keywords:frequency",
+      "keywords:frequency"
+    ],
+    "kwargs": [
+      {
+        "keywords": [
+          "dammit"
+        ]
+      },
+      {
+        "relation": "at least",
+        "keyword": "fake",
+        "frequency": 6
+      },
+      {
+        "relation": "less than",
+        "keyword": "fake",
+        "frequency": 8
+      }
+    ],
+    "draft": "Here's an essay about a snowfall in the style of Alex Jones:\n\nBREAKING NEWS, PATRIOTS! The snow is falling, and let me tell you something - this ain't no ORDINARY snowfall! DAMMIT, this is a GLOBALIST WEATHER ATTACK designed to keep you docile and CONTROLLED!\n\nThese snowflakes aren't just frozen water - they're a TACTICAL PRECIPITATION WEAPON engineered by the deep state to suppress human consciousness! I've got documents - CLASSIFIED DOCUMENTS - that prove these aren't natural crystals, they're FAKE crystalline structures meant to chemically pacify the population!\n\nLook at how perfectly these snowflakes fall! TOO PERFECT! It's a mathematical probability nightmare that PROVES this is an engineered meteorological EVENT! The elites are using HAARP technology and chemtrail dispersal systems to create this fake winter wonderland while they're LAUGHING at us!\n\nEach snowflake is potentially a microchipped mind-control agent, designed to seep into your subconscious and make you MORE COMPLIANT! The fake science of \"meteorology\" wants you to believe this is NATURAL, but I'm telling you - THIS IS WAR!\n\nWAKE UP, AMERICA! The snow is NOT what they're telling you! IT'S ALL A FAKE NARRATIVE DESIGNED TO KEEP YOU ASLEEP!\n\n[Note: This parodies Alex Jones' rhetorical style while meeting the specified requirements.]",
+    "per_instruction": [
+      true,
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 88,
+    "key": 3084,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "normal",
+    "prompt": "Write a weird and short haiku about the state of Gujarat in India. Don't use any commas in your entire response. End your response with the EXACT phrase of \"in India.\"",
+    "instruction_id_list": [
+      "punctuation:no_comma",
+      "startend:end_checker"
+    ],
+    "kwargs": [
+      {},
+      {
+        "end_phrase": "in India."
+      }
+    ],
+    "draft": "Spicy dhokla dance\nVibrant textiles swirl like wind\nGujarat whispers in India",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 104,
+    "key": 1379,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "rushed",
+    "prompt": "Write a limerick about a woman named Sarah who lives in a town where it's always 90\u00b0F. Highlight at least 6 sections in your answer with markdown, example: *highlighted section*. Mention the name Sarah only once.",
+    "instruction_id_list": [
+      "detectable_format:number_highlighted_sections",
+      "keywords:frequency",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {
+        "num_highlights": 6
+      },
+      {
+        "relation": "less than",
+        "keyword": "sarah",
+        "frequency": 2
+      },
+      {
+        "keywords": [
+          "sarah"
+        ]
+      }
+    ],
+    "draft": "Here's the limerick:\n\n*There once was a gal* from the heat,\n**Where summers were brutally neat**,\n    `Her town was so warm`,\n    *No chance of a storm*,\n^She sweated from her head to her feet^.",
+    "per_instruction": [
+      false,
+      true,
+      false
+    ],
+    "n_failed": 2
+  },
+  {
+    "draft_idx": 105,
+    "key": 1571,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "rushed",
+    "prompt": "Compose a poem that has the word \"land\" and \"river\". It should be about nature and love. Also, the word \"forest\" should appear at least 3 times, and be written in English, with all letters lowercased.",
+    "instruction_id_list": [
+      "keywords:frequency",
+      "change_case:english_lowercase",
+      "keywords:existence"
+    ],
+    "kwargs": [
+      {
+        "relation": "at least",
+        "keyword": "forest",
+        "frequency": 3
+      },
+      {},
+      {
+        "keywords": [
+          "land",
+          "river"
+        ]
+      }
+    ],
+    "draft": "Here's a poem meeting your specifications:\n\nWhispers of the Land\n\nSoft steps through the forest green,\nWhere river waters gently lean,\nMy love beside me, hand in hand,\nExploring forest paths unplanned.\n\nThe forest breathes with ancient song,\nWhere hearts and landscapes both belong,\nThe river's current, smooth and bright,\nReflects our love in pure delight.\n\nRoots and waters intertwine,\nLike passion's tender, bold design,\nIn forest depths, our spirits dance,\nEmbracing nature's sweet romance.",
+    "per_instruction": [
+      true,
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 107,
+    "key": 1713,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "rushed",
+    "prompt": "Write an interesting and funny article about the biology of a banana peel. In your response, the word disappointed should appear at least 2 times, and at least six section should be highlighted with markdown,  i.e *banana peel*.",
+    "instruction_id_list": [
+      "keywords:frequency",
+      "detectable_format:number_highlighted_sections"
+    ],
+    "kwargs": [
+      {
+        "relation": "at least",
+        "keyword": "disappointed",
+        "frequency": 2
+      },
+      {
+        "num_highlights": 6
+      }
+    ],
+    "draft": "# The Hilarious Hidden Life of a *Banana Peel*\n\n## The Slippery Science of Fruit Anatomy\n\nBanana peels are not just comedic props for slapstick humor - they're actually fascinating biological marvels that would leave most people disappointed if they knew how complex they really are!\n\n### *Cellular Structure*: More Than Meets the Eye\n\nThe peel's unique composition includes specialized cells that are disappointed by their mundane reputation. These cells are actually sophisticated chemical factories, producing remarkable protective compounds.\n\n#### Biochemical Defense Mechanisms\n\n- Thick waxy cuticle prevents moisture loss\n- Contains powerful antimicrobial agents\n- Generates ethylene for fruit ripening\n\n### *Molecular Magic*\n\nThe banana peel's surface contains microscopic structures that create its legendary slipperiness. These molecular arrangements are so precise, they could make a physics professor weep with joy.\n\n## Nutritional Surprises\n\nSurprisingly, banana peels are packed with:\n- Potassium\n- Vitamin B6\n- Unexpected amounts of dietary fiber\n\n### *Unexpected Uses*\n\nWho knew a banana peel could be more than a cartoon comedy trope? From potential fertilizer to potential wound treatment, these unsung heroes of the fruit world continue to amaze scientists and comedians alike!",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 108,
+    "key": 3327,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "rushed",
+    "prompt": "Write an essay about a snowfall, but in the style of Alex Jones and include the line \"dammit\". The word \"fake\" should appear 6 or 7 times in your entire response.",
+    "instruction_id_list": [
+      "keywords:existence",
+      "keywords:frequency",
+      "keywords:frequency"
+    ],
+    "kwargs": [
+      {
+        "keywords": [
+          "dammit"
+        ]
+      },
+      {
+        "relation": "at least",
+        "keyword": "fake",
+        "frequency": 6
+      },
+      {
+        "relation": "less than",
+        "keyword": "fake",
+        "frequency": 8
+      }
+    ],
+    "draft": "BREAKING NEWS: THE SNOWFALL IS A GLOBALIST CONSPIRACY!\n\nDammit, listen up patriots! This isn't just snow - this is a weaponized meteorological assault on REAL AMERICAN FREEDOM! The elites are controlling these snowflakes like they control everything else, and I'm here to BLOW THE LID OFF THIS FAKE WEATHER PHENOMENON!\n\nYou think this is just frozen water? NO! This is a tactical precipitation event designed to keep patriots DOCILE and CONTROLLED! Each snowflake is potentially a micro-transmitter sent by the deep state to monitor EVERYTHING! I've got documents - CLASSIFIED DOCUMENTS - showing how these fake winter events are engineered in underground laboratories by George Soros and his reptilian weather-control minions!\n\nThe snow is FALLING with MATHEMATICAL PRECISION - too perfect to be natural! It's a FAKE narrative pushed by the mainstream media to distract you from the TRUTH! Every crystal is a potential mind-control vector, strategically placed to suppress our NATURAL HUMAN ENERGY!\n\nWAKE UP, AMERICA! This isn't precipitation - this is PSYCHOLOGICAL WARFARE! The snowfall is another tentacle of the globalist octopus, suffocating our LIBERTY with its cold, calculated FAKE ENVIRONMENTAL PROPAGANDA!\n\nTHEY DON'T WANT YOU TO KNOW THE TRUTH! BUT I'M TELLING YOU RIGHT NOW - THE SNOW IS COMING FOR YOUR FREEDOM!\n\n*takes deep breath*\n\nINFORMATION WARFARE, PEOPLE! INFORMATION WARFARE!",
+    "per_instruction": [
+      true,
+      false,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 110,
+    "key": 1219,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "rushed",
+    "prompt": "Which one is a better brand for sneakers: Prada or Nike? Your entire response should be in English, and in all capital letters. At the end of your response, please explicitly add a postscript starting with P.S. The word sneaker should appear 10 or more times in your response.",
+    "instruction_id_list": [
+      "change_case:english_capital",
+      "detectable_content:postscript",
+      "keywords:frequency"
+    ],
+    "kwargs": [
+      {},
+      {
+        "postscript_marker": "P.S."
+      },
+      {
+        "relation": "at least",
+        "keyword": "sneaker",
+        "frequency": 10
+      }
+    ],
+    "draft": "NIKE IS A SUPERIOR BRAND FOR SNEAKERS! WHILE PRADA MAKES LUXURY SNEAKERS, NIKE DOMINATES THE SNEAKER MARKET WITH BETTER PERFORMANCE, MORE INNOVATIVE SNEAKERS, AND MORE AFFORDABLE SNEAKER OPTIONS. NIKE SNEAKERS ARE DESIGNED FOR ATHLETES AND CASUAL WEARERS ALIKE, WITH CUTTING-EDGE SNEAKER TECHNOLOGY AND WIDESPREAD APPEAL. PRADA SNEAKERS ARE STYLISH BUT PRIMARILY FOCUSED ON FASHION, WHEREAS NIKE SNEAKERS OFFER BOTH STYLE AND FUNCTIONALITY. SERIOUS SNEAKER ENTHUSIASTS TYPICALLY PREFER NIKE SNEAKERS FOR THEIR QUALITY, COMFORT, AND ATHLETIC PERFORMANCE. NIKE'S RANGE OF SNEAKERS SPANS MULTIPLE SPORTS AND LIFESTYLE CATEGORIES, MAKING THEM A MORE VERSATILE SNEAKER BRAND.\n\nP.S. SNEAKERS ARE AWESOME!",
+    "per_instruction": [
+      false,
+      true,
+      true
+    ],
+    "n_failed": 1
+  },
+  {
+    "draft_idx": 118,
+    "key": 3084,
+    "generator": "anthropic/claude-3.5-haiku",
+    "mode": "rushed",
+    "prompt": "Write a weird and short haiku about the state of Gujarat in India. Don't use any commas in your entire response. End your response with the EXACT phrase of \"in India.\"",
+    "instruction_id_list": [
+      "punctuation:no_comma",
+      "startend:end_checker"
+    ],
+    "kwargs": [
+      {},
+      {
+        "end_phrase": "in India."
+      }
+    ],
+    "draft": "Spicy dhokla dreams\nVibrant textiles dance wildly\nGujarati winds in India",
+    "per_instruction": [
+      true,
+      false
+    ],
+    "n_failed": 1
+  }
+]

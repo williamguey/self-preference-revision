@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the preprint."
+title: "Self-Preference Is Absent in Verifiable Instruction-Following Revision: A Four-Model Test Under Genuine Authorship"
+authors:
+  - family-names: "Guey"
+    given-names: "William"
+    affiliation: "Department of Industrial Engineering, Tsinghua University, Beijing, China"
+  - family-names: "Bougault"
+    given-names: "Pierrick"
+    affiliation: "Department of Industrial Engineering, Tsinghua University, Beijing, China"
+version: "1.0.0"
+date-released: "2026-06-18"
+license: MIT
+repository-code: "https://github.com/USER/REPO"   # TODO: set repo URL
+url: "https://arxiv.org/abs/XXXX.XXXXX"            # TODO: set arXiv id after posting
+keywords:
+  - large language models
+  - self-preference
+  - self-bias
+  - instruction following
+  - IFEval
+  - self-correction
+  - LLM revision

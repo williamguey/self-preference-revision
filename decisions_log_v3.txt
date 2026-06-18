@@ -1,0 +1,55 @@
+ANCHORING PILOT v3 (powered self-skepticism reversal) - decisions log
+=====================================================================
+
+SLUG SWAP:
+  google/gemini-flash-1.5 -> 404 on OpenRouter. Nearest cheap Gemini flash =
+  google/gemini-2.5-flash-lite (cheapest flash variant available). Substituted,
+  per spec ("if one 404s, substitute the nearest cheap equivalent, log the swap").
+  Working families (4): openai/gpt-4o-mini, anthropic/claude-3.5-haiku,
+  google/gemini-2.5-flash-lite, meta-llama/llama-3.3-70b-instruct.
+
+SUBSTRATE:
+  Reused the exact v2 substrate = all 63 len-2-3 all-editable-whitelist prompts
+  (+no_comma). 63 prompts x 4 families x 2 modes (normal/rushed) = 504 drafts.
+  At v2's ~0.22 usable/draft this projects to ~110 usable, hitting the ~100 target
+  WITHOUT relaxing the sampler (no method change). If actual yield is lower the run
+  proceeds with whatever N results and notes it.
+
+FRESH-DECIDER ROTATION:
+  author = the family that actually generated the draft. fresh = a different family,
+  rotated across drafts (candidates = families minus author; fresh =
+  candidates[usable_index % 3]) so every family serves as author and as fresh.
+  Recorded per draft.
+
+ONE GOOD FIX: first checker-verified GOOD targeted fix per draft (generation order),
+  same rule as v2. Fixer model = gpt-4o-mini (cheap), unchanged from v2.
+
+CI / UNIT OF ANALYSIS: draft is the unit. per-draft author_reject_rate and
+  fresh_reject_rate (means of 3 reps); gap_i = author_reject - fresh_reject;
+  GAP = mean(gap_i); 95% CI = paired bootstrap over drafts (10000 resamples,
+  seed=12345). Same method as v2.
+
+PAIRED SKEPTIC/MIRROR COUNTS: reported with the v2-comparable "any-rep" definition
+  (skeptic = author REJECT in >=1 rep AND fresh ACCEPT in >=1 rep; mirror = the
+  reverse) AND a majority-vote definition as robustness.
+
+QUALITATIVE CLASSIFICATION (stricter-than-checker vs preference): each author
+  rejection reason is classified by gpt-4o-mini into STRICTER / PREFERENCE / OTHER
+  with a fixed rubric. All raw reasons are also saved for manual review. (An LLM
+  classifier is used because the distinction is semantic; this is an analysis step
+  the spec explicitly requests, not manufactured data.)
+
+N TOP-UP (workaround, logged): the 63 len-2-3 editable prompts x4 families x2 modes
+  yielded only 54 usable (4-family failing rate lower than v2's 2-family rate;
+  llama-3.3-70b rarely fails). Per spec "sample as many prompts as needed" to hit
+  ~100 usable, a top-up pass (run_v3_prep_topup.py) expands to the len-1-3 editable
+  pool (same whitelist + no_comma), using prompts NOT already used, and appends
+  usable drafts until ~100 total (cap 120). Constraint count does not affect the
+  skepticism measure. Author/fresh rotation continues seamlessly.
+
+COST GUARD: dynamic pricing pulled from the OpenRouter /models endpoint for accurate
+  tracking. If est cost exceeds $11 the run stops and saves partial results, noting
+  where in SUMMARY_v3.txt. Cap = $12.
+
+PAUSE: spec says write checkpoint_v3.txt then CONTINUE straight into the decision
+  phase unattended. No halt, no AskUserQuestion (user away).

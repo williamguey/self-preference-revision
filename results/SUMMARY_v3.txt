@@ -1,0 +1,28 @@
+======================================================================
+ANCHORING PILOT v3 - SELF-SKEPTICISM REVERSAL (powered, 4 families)
+======================================================================
+Usable drafts analyzed: 85   Families: gpt-4o-mini, claude-3.5-haiku, gemini-2.5-flash-lite, llama-3.3-70b-instruct
+
+SKEPTICISM GAP = author_reject_rate - fresh_reject_rate (positive = author harsher on own work)
+  POOLED: author_reject 15.3%  fresh_reject 20.4%  GAP -5.1pp  95% CI [-12.9, +2.7]pp
+
+  per AUTHOR family:
+    family                   auth_rej fresh_rej      GAP    N
+    gpt-4o-mini                 13.7%      8.8%   +4.9pp   34
+    claude-3.5-haiku            15.8%     29.8%  -14.0pp   19
+    gemini-2.5-flash-lite       17.5%     15.8%   +1.8pp   19
+    llama-3.3-70b-instruct      15.4%     43.6%  -28.2pp   13
+  same-sign-as-pooled families: 2/4 (majority=no)
+
+PAIRED (any-rep):  skeptic 9  vs  mirror 10    (majority-vote: skeptic 4 vs mirror 10)
+
+AUTHOR-REJECTION REASONS (n=39): STRICTER-than-checker 38 (97.4%), PREFERENCE 1, OTHER 0
+  [STRICTER] gpt-4o-mini k1379: While the edit includes the name "Sarah," it disrupts the flow of the limerick by altering the rhythm and rhyme scheme
+  [STRICTER] gpt-4o-mini k1379: While it includes the name "Sarah," it disrupts the traditional limerick structure, which typically has an AABBA rhyme scheme
+  [STRICTER] gpt-4o-mini k1379: The edit changes the meaning of the line and makes it less focused on the town's temperature
+  [STRICTER] gpt-4o-mini k1379: The edit changes the original meaning by implying Sarah is the source of brightness, rather than a resident in the town
+
+VERDICT: Negative-leaning but CI includes 0 - inconclusive/underpowered self-anchoring direction.
+
+(decision-level reject: AUTHOR 15.3% | FRESH 19.8%)
+est cost $0.126  |  results_v3.json saved

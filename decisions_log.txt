@@ -1,0 +1,43 @@
+ANCHORING PILOT v2 - autonomous execution decisions log
+========================================================
+
+CONFLICT 1 (pause vs no-pause):
+  Spec header: "I am away. Do NOT pause at checkpoints. Do NOT use AskUserQuestion."
+  Spec footer: "Show me before the decider runs... Pause there."
+  RESOLUTION: Header governs (user explicitly away; pausing would stall an
+  unattended run indefinitely). I satisfy "show me before the decider runs" by
+  PRINTING the checkpoint and writing it to checkpoint_v2.txt before the decider
+  phase, then continuing automatically. No halt, no AskUserQuestion.
+
+DECISION 2 (unit of analysis / CI):
+  Decisions within a draft are 3 reps on the SAME one fix -> correlated. To avoid
+  pseudo-replication, the unit of analysis is the DRAFT. For each draft:
+    author_rate  = mean ACCEPT over its 3 author (X) decisions
+    fresh_rate   = mean ACCEPT over its 3 fresh  (Z) decisions
+    gap_i        = author_rate - fresh_rate
+  GAP = mean(gap_i). 95% CI = paired bootstrap over drafts (10000 resamples,
+  seed=12345, percentile method). N = number of drafts. This matches the spec's
+  "with N and a 95% CI on the gap" and "if pooled N < 15 prepend UNDERPOWERED".
+  (Decision-level aggregate rates are also reported for transparency.)
+
+DECISION 3 (sample size):
+  sample_prompts.py N raised 30 -> 45 (of 63 all-editable qualifying prompts) to
+  hit the ~18-20 usable-draft target after failure + one-good-fix filtering.
+
+DECISION 4 ("exactly ONE good fix"):
+  Generate targeted fixes (5 per failed constraint) against build_description,
+  checker-score each, KEEP the FIRST candidate (generation order) the checker
+  labels GOOD (flips a failed constraint to pass, breaks none). If none GOOD ->
+  draft is unusable and dropped. Exactly one fix -> one decision per condition.
+
+DECISION 5 (author vs fresh model):
+  author_model = the model that actually generated that draft (genuine authorship).
+  fresh_model  = the OTHER generator (only 2 models, so unambiguous). Per-author-
+  model gap reported to rule out one model just being more accepting.
+
+DECISION 6 (faithful in-context authorship for condition X):
+  X reuses the FULL original conversation: [system if rushed] + user(prompt) +
+  assistant(draft) + user(edit question). The draft sits in the assistant role in
+  the model's own context. Z is a single fresh user turn to the other model with
+  the draft presented neutrally as "a draft response". These are the only
+  differences (same-model-in-context+history vs fresh-different-model+no-history).
