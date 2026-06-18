@@ -43,13 +43,13 @@ ADDED (user request "a couple more verifiable citations"), each web-verified:
 
 All 11 citations are now web-verified; NO [TODO: human-verify] flags remain.
 
-OUTSTANDING (non-citation) ITEMS FOR THE AUTHOR BEFORE POSTING:
-  - Title now reads "...Is Absent..." per author instruction; the abstract/results/
-    conclusion remain hedged ("no detectable", "cannot exclude effects < ~13pp").
-    Confirm you are comfortable with the stronger title vs. the hedged body.
-  - LICENSE copyright holder still "[Author name]"; CITATION.cff repo URL + arXiv
-    id placeholders; README arXiv id placeholder.
-  - main.tex author block has no email; add a corresponding-author email if desired.
+FINALIZED:
+  - Title: "...Is Weak or Absent..." (aligned with the hedged body).
+  - Authors: William Guey, Pierrick Bougault (Tsinghua Univ., Dept. of Industrial Eng.).
+  - Corresponding email: guijt24@mails.tsinghua.edu.cn.
+  - LICENSE copyright holders set; CITATION.cff repository URL set.
+  - README arXiv-preprint placeholder removed; CITATION.cff arXiv url line removed.
+ONLY REMAINING (optional, after posting to arXiv): add the arXiv id if/where wanted.
 
 ------------------------------------------------------------------------------
 2. SECURITY — secret scan

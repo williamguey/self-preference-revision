@@ -2,10 +2,9 @@
 
 Code, data, and paper for the preprint:
 
-> **Self-Preference Is Absent in Verifiable Instruction-Following Revision:
+> **Self-Preference Is Weak or Absent in Verifiable Instruction-Following Revision:
 > A Four-Model Test Under Genuine Authorship**
 > William Guey, Pierrick Bougault (Dept. of Industrial Engineering, Tsinghua University)
-> Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) *(TODO: set after posting)*
 
 ## What this is
 

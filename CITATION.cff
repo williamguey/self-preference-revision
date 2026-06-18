@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or data, please cite the preprint."
-title: "Self-Preference Is Absent in Verifiable Instruction-Following Revision: A Four-Model Test Under Genuine Authorship"
+title: "Self-Preference Is Weak or Absent in Verifiable Instruction-Following Revision: A Four-Model Test Under Genuine Authorship"
 authors:
   - family-names: "Guey"
     given-names: "William"
@@ -12,7 +12,6 @@ version: "1.0.0"
 date-released: "2026-06-18"
 license: MIT
 repository-code: "https://github.com/williamguey/self-preference-revision"
-url: "https://arxiv.org/abs/XXXX.XXXXX"            # TODO: set arXiv id after posting
 keywords:
   - large language models
   - self-preference
