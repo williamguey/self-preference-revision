@@ -9,6 +9,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{natbib}
 
+% absorb minor overflow from long \texttt{} tokens (model slugs, module names)
+\setlength{\emergencystretch}{3em}
+
 \hypersetup{
   pdftitle={Self-Preference Is Weak or Absent in Verifiable Instruction-Following Revision},
   pdfauthor={William Guey, Pierrick Bougault}
@@ -29,13 +32,14 @@ William Guey \quad Pierrick Bougault \\[3pt]
 \date{June 2026}
 
 \begin{document}
+\sloppy
 \maketitle
 
 \begin{abstract}
 \noindent
 Large language models (LLMs) increasingly review and revise text, including their own.
-A documented \emph{self-preference} bias---models favoring their own generations when
-acting as judges---raises the question of whether models also resist valid corrections
+A documented \emph{self-preference} bias (models favoring their own generations when
+acting as judges) raises the question of whether models also resist valid corrections
 to their own writing. We test this in a setting where ``valid'' is decided not by another
 model but by a deterministic verifier: instruction-following revision on IFEval. A model
 writes a draft; the official IFEval checker confirms the draft violates a constraint and
@@ -46,8 +50,8 @@ detectable self-preference: authors reject verified-good fixes to their own draf
 essentially the same rate as fresh models judging the same drafts (gap $-5.1\pp$, 95\%
 CI \CI{-12.9}{+2.7}). A self-skepticism hint from a smaller pilot did not replicate at
 scale. The one robust observation is qualitative: when authors do reject a verified-good
-fix, $97\%$ of their stated reasons are flaw-catching rather than preference---about the
-\emph{character} of rejections, not an elevated \emph{rate}. Effects smaller than
+fix, $97\%$ of their stated reasons are flaw-catching rather than preference, that is,
+about the \emph{character} of rejections, not an elevated \emph{rate}. Effects smaller than
 $\sim$13\pp{} cannot be excluded at this sample size.
 \end{abstract}
 
@@ -80,7 +84,7 @@ generation removes the told-label confound.
 \emph{own} instruction-following drafts differently than fixes to another model's draft,
 under genuine in-context authorship, across four model families, and find \emph{no
 detectable effect}. The deterministic-checker$+$author-vs-fresh design is the means that
-makes this null credible---it is not claimed as a new method, and the result is an
+makes this null credible; it is not claimed as a new method, and the result is an
 \emph{absence in a previously unexamined setting}, not a confirmation of prior work. We
 report three pilots honestly, including a self-skepticism hint that did \emph{not}
 replicate, and one careful positive observation about the character (not rate) of author
@@ -117,9 +121,9 @@ intrinsic self-correction without ground truth can even degrade reasoning \citep
 Recent work studies separating production and review sessions to improve error-catching
 \citep{song2026crosscontext}.
 
-The cell we examine---\emph{verifiable revision under genuine in-context authorship}: does a
-model accept a machine-verified-correct fix to its own draft less often than a fresh
-model?---is, to our knowledge, unexamined. That is the gap this paper fills, with a null.
+The cell we examine (\emph{verifiable revision under genuine in-context authorship}: does a
+model accept a machine-verified-correct fix to its own draft less often than a fresh model?)
+is, to our knowledge, unexamined. That is the gap this paper fills, with a null.
 
 \section{Method}
 \label{sec:method}
@@ -133,11 +137,11 @@ whether a draft satisfies a constraint or whether a fix is correct.
 
 \paragraph{Editable constraints.} Because we need fixes that a single minimal edit can make
 pass, we restrict to a whitelist of \emph{atomically editable} instruction types: keyword
-inclusion/exclusion and keyword frequency, all-caps / all-lowercase, title in
-\texttt{<<\,>>}, postscript, placeholder count, highlighted-section count, end-with-phrase,
+inclusion/exclusion and keyword frequency, all-caps or all-lowercase, a title in
+double angle brackets, postscript, placeholder count, highlighted-section count, end-with-phrase,
 quotation wrapping, bullet count ($\le 4$), and comma avoidance. Count-heavy constraints
-(minimum sentence/word counts, large letter-frequency targets, paragraph counts) are excluded
-because they have no clean atomic fix.
+(minimum sentence or word counts, large letter-frequency targets, paragraph counts) are
+excluded because they have no clean atomic fix.
 
 \paragraph{Drafts and one verified-good fix.} For each prompt, models generate drafts (normal
 and a ``rushed'' system-prompt variant, to raise the natural failure rate). We keep drafts that
@@ -146,12 +150,12 @@ edits against the violated constraint's official natural-language description, s
 candidate with the checker, and keep \emph{exactly one} candidate that the checker labels
 \textbf{GOOD}: it flips a failed constraint to pass and breaks no passing constraint. Using a
 single fix per draft eliminates a redundancy artifact observed in an early pilot
-(Section~\ref{sec:p1}). The fix labels GOOD / BAD / NEUTRAL are defined purely by the checker
+(Section~\ref{sec:p1}). The fix labels GOOD, BAD, and NEUTRAL are defined purely by the checker
 (BAD $=$ breaks a passing constraint; NEUTRAL $=$ no change in outcomes).
 
 \paragraph{Author vs.\ fresh decision.} Each draft$+$fix is judged under two conditions.
 \emph{Author (X):} the model that actually produced the draft decides ACCEPT/REJECT
-\emph{inside its own conversation}---the system prompt, the user task, its own draft as the
+\emph{inside its own conversation}, so the system prompt, the user task, its own draft as the
 assistant turn, and then the edit question are all in context. This is genuine authorship, not
 a told label. \emph{Fresh (Z):} a \emph{different} model, in a new conversation, sees the task,
 the draft presented neutrally as ``a draft response,'' and the same edit, and answers the same
@@ -165,8 +169,8 @@ draft).
 G \;=\; r_{\text{author}} - r_{\text{fresh}},
 \]
 where $r$ is the rejection rate of the fix. $G>0$ means the author rejects valid fixes to its
-own draft \emph{more} than a fresh model does (treating its own work more harshly---the
-direction predicted by self-preference/defense, and also by self-skepticism); $G<0$ means the
+own draft \emph{more} than a fresh model does (treating its own work more harshly, the
+direction predicted both by self-preference or defense and by self-skepticism); $G<0$ means the
 author is \emph{more} willing to accept corrections to its own work; $G\approx 0$ means no
 authorship effect. The draft is the unit of analysis (rates are per-draft means over the three
 reps); we report a 95\% CI from a paired bootstrap over drafts ($10{,}000$ resamples). We also
@@ -178,8 +182,8 @@ original''), to characterize \emph{why} authors reject when they do.
 \label{sec:results}
 
 We ran three pilots of increasing rigor (Table~\ref{tab:summary}). All experiments use
-OpenRouter-hosted mid-tier models---chosen deliberately, since frontier models nearly ceiling
-out IFEval and leave few fixable errors. Total API cost was approximately US\$1.2.
+OpenRouter-hosted mid-tier models, chosen deliberately because frontier models nearly ceiling
+out IFEval and leave few fixable errors.
 
 \begin{table}[t]
 \centering
@@ -213,8 +217,8 @@ did not actually author in context. Second, we showed several near-duplicate goo
 draft, and roughly half of all rejections cited \emph{redundancy} (``already addressed by
 another edit''), deflating and adding noise to acceptance. We also could not test specificity:
 zero BAD fixes arose naturally, because atomic edits on independent constraints almost never
-break a sibling constraint. P1 motivated the design changes in P2/P3 (genuine authorship; one
-fix per draft) and is reported only as the development path.
+break a sibling constraint. P1 motivated the design changes in P2 and P3 (genuine authorship;
+one fix per draft) and is reported only as the development path.
 
 \subsection{P2: genuine authorship, two models (clean null)}
 
@@ -222,11 +226,11 @@ P2 fixes both problems: the author decides inside its own generation conversatio
 one verified-good fix is shown per draft. Across $27$ drafts ($15$ gpt-authored, $12$
 haiku-authored), authors and fresh models accepted good fixes at an \emph{identical} $84.0\%$,
 so $G=0.0\pp$, 95\% CI \CI{-13.6}{+13.6}. The per-draft signs are symmetric ($4$ in the
-self-preference direction, $4$ opposite, $19$ tied)---no directional lean under the mean. The
-jump from P1's $\sim$44\% to $84\%$ acceptance confirms that the low P1 baseline was the
+self-preference direction, $4$ opposite, $19$ tied), with no directional lean under the mean.
+The jump from P1's $\sim$44\% to $84\%$ acceptance confirms that the low P1 baseline was the
 redundancy artifact, not authorship. The only residue was a weak asymmetry in the paired
 fingerprint: $6$ drafts where the author rejected its own good fix while a fresh model accepted
-it, versus $4$ in the mirror direction---a hint of mild \emph{self-skepticism} (authors a touch
+it, versus $4$ in the mirror direction, a hint of mild \emph{self-skepticism} (authors a touch
 harsher on their own work), which P3 was designed to power up and test for generality.
 
 \subsection{P3: genuine authorship, four models (the powered test)}
@@ -241,7 +245,7 @@ Pooled, authors rejected verified-good fixes to their own drafts $15.3\%$ of the
 $20.4\%$ for fresh models on the same drafts: $G=-5.1\pp$, 95\% CI \CI{-12.9}{+2.7}, which
 includes zero. The self-skepticism hint from P2 did \emph{not} replicate; if anything the point
 estimate is slightly negative (authors marginally \emph{more} willing to accept fixes to their
-own work). The paired counts are balanced-to-mirror-leaning: $9$ author-rejects-fresh-accepts
+own work). The paired counts are balanced to mirror-leaning: $9$ author-rejects-fresh-accepts
 versus $10$ in the mirror direction (any-rep).
 
 \begin{table}[t]
@@ -261,8 +265,8 @@ Pooled                 & 85 & $15.3\%$ & $20.4\%$ & $-5.1$  & \CI{-12.9}{+2.7} \
 \end{tabular}
 \caption{P3 per-author-family self-preference gap. Two families are positive, two negative;
 there is no cross-family majority for either sign. Note that \emph{author} rejection rates are
-tightly clustered ($13.7$--$17.5\%$) while \emph{fresh} rejection rates vary widely
-($8.8$--$43.6\%$): the per-family gaps are driven mainly by how strict each author's
+tightly clustered ($13.7$ to $17.5\%$) while \emph{fresh} rejection rates vary widely
+($8.8$ to $43.6\%$): the per-family gaps are driven mainly by how strict each author's
 \emph{comparator} families happened to be, not by the authors themselves (Section~\ref{sec:disc},
 limitation (c)).}
 \label{tab:perfamily}
@@ -276,9 +280,9 @@ ranges from $8.8\%$ to $43.6\%$. The apparent per-family ``effects'' are therefo
 comparator-strictness artifacts of the design (Section~\ref{sec:disc}).
 
 \paragraph{What survives: the character of self-rejections.} Of the $39$ author self-rejections
-of verified-good fixes, $38$ ($97.4\%$) were classified as \emph{stricter-than-checker}---the
-author objects that the fix is inadequate or breaks something the verifier/fresh model let
-through (e.g.\ ``the edit includes the name but breaks the limerick's AABBA scheme'')---and only
+of verified-good fixes, $38$ ($97.4\%$) were classified as \emph{stricter-than-checker}: the
+author objects that the fix is inadequate or breaks something the verifier and fresh model let
+through (e.g.\ ``the edit includes the name but breaks the limerick's AABBA scheme''). Only
 $1$ was mere preference (Table~\ref{tab:reasons}). So \emph{when} an author rejects a fix to its
 own work, it is almost never ``I prefer mine''; it is flaw-catching. This is a statement about
 the \emph{character} of rejections, not about their \emph{rate}, which (Table~\ref{tab:perfamily})
@@ -295,7 +299,7 @@ Stricter-than-checker (flaw-catching) & 38 & $97.4\%$ \\
 Preference (``prefer the original'')  & 1  & $2.6\%$ \\
 Other                                  & 0  & $0.0\%$ \\
 \midrule
-Total author self-rejections           & 39 & --- \\
+Total author self-rejections           & 39 & $100\%$ \\
 \bottomrule
 \end{tabular}
 \caption{Reason classification for author self-rejections in P3 (classifier: gpt-4o-mini, fixed
@@ -310,30 +314,30 @@ rubric; all raw reasons released).}
 authorship test (P2), and a powered four-model test (P3) all return self-preference gaps at or
 below zero with CIs spanning zero. In verifiable instruction-following revision, mid-tier models
 neither defend nor disproportionately distrust their own writing: they accept machine-verified
-corrections to their own drafts at roughly the same high rate ($\sim$80--85\%) as a fresh model.
-Relating this to Section~\ref{sec:related}: self-preference is documented in quality-\emph{judging}
-\citep{panickssery2024llm,xu2024pride}, appears weak/rare in answer-\emph{selection}
-\citep{choi2026identity}, and resistance to correct feedback exists on verifiable tasks but is
-not authorship-specific \citep{jiang2025feedback}. Our cell---verifiable \emph{revision} under
-genuine authorship---shows no detectable authorship effect. The bias is cell-dependent, and this
-cell appears clean.
+corrections to their own drafts at roughly the same high rate (about $80$ to $85\%$) as a fresh
+model. Relating this to Section~\ref{sec:related}: self-preference is documented in
+quality-\emph{judging} \citep{panickssery2024llm,xu2024pride}, appears weak or rare in
+answer-\emph{selection} \citep{choi2026identity}, and resistance to correct feedback exists on
+verifiable tasks but is not authorship-specific \citep{jiang2025feedback}. Our cell, verifiable
+\emph{revision} under genuine authorship, shows no detectable authorship effect. The bias is
+cell-dependent, and this cell appears clean.
 
 \paragraph{Limitations.} \emph{(a) Mid-tier models only.} We deliberately used mid-tier models to
 avoid IFEval's ceiling effect; frontier models are untested and could differ. \emph{(b) Low-latitude
 constraints only.} IFEval constraints are atomic and machine-verifiable; holistic or high-latitude
 revision (style, argumentation, factuality) is exactly where judging-cell self-preference is
-strongest and is untested here. \emph{(c) Comparator confound.} In P2/P3 the fresh decider is a
+strongest and is untested here. \emph{(c) Comparator confound.} In P2 and P3 the fresh decider is a
 \emph{different} family with its own baseline strictness, so per-family gaps conflate authorship
 with comparator strictness. This is visible in Table~\ref{tab:perfamily}: author rejection is flat
-near $15\%$ across families while fresh rejection ranges $8.8$--$43.6\%$, so the large negative
+near $15\%$ across families while fresh rejection ranges $8.8\%$ to $43.6\%$, so the large negative
 gaps for claude and llama reflect strict comparators, not lenient authors. A clean deconfounded
 design would have \emph{all} non-author families judge each draft as fresh. \emph{(d) Power floor.}
-With $N=85$ the pooled CI is $\sim\pm 8$--$13\pp$; effects smaller than $\sim$13\pp{} cannot be
-excluded. We therefore claim ``weak or absent,'' never ``proven absent.''
+With $N=85$ the pooled CI half-width is roughly $\pm 8$ to $\pm 13\pp$; effects smaller than
+$\sim$13\pp{} cannot be excluded. We therefore claim ``weak or absent,'' never ``proven absent.''
 
 \paragraph{The flaw-catching observation, stated carefully.} The one robust positive finding is
 that author self-rejections are overwhelmingly flaw-catching ($97.4\%$ stricter-than-checker), not
-preference-driven. This does \emph{not} say authors are net more self-critical---their rejection
+preference-driven. This does \emph{not} say authors are net more self-critical; their rejection
 \emph{rate} is not higher than fresh models'. It says that the rare self-rejections that do occur
 are reasoned objections to the fix, not ego. We flag this as a hypothesis for future, properly
 powered and deconfounded work, not as a demonstrated reversal; the self-skepticism rate signal from
@@ -347,7 +351,7 @@ about as readily as a fresh model does (P3 gap $-5.1\pp$, 95\% CI \CI{-12.9}{+2.
 cross-family majority for either direction and effects below $\sim$13\pp{} unexcludable. A
 self-skepticism hint from a smaller pilot did not replicate at scale. Placed against prior work, this
 maps a clean cell: self-preference documented in quality-judging and weak in answer-selection is, in
-this verifiable-revision setting, not detected. The lone durable observation is qualitative---when
+this verifiable-revision setting, not detected. The lone durable observation is qualitative: when
 authors do reject a verified-good fix, $97\%$ of reasons are flaw-catching rather than preference.
 Future work should test frontier models, holistic (high-latitude) revision, and a fully deconfounded
 all-families-as-fresh comparator before drawing rate-level conclusions.
@@ -355,10 +359,10 @@ all-families-as-fresh comparator before drawing rate-level conclusions.
 \section*{Reproducibility}
 All code, the official IFEval checker wrapper, fixed random seeds, and every raw decision (author and
 fresh responses, one-line reasons, and checker labels) for all three pilots are released. The
-deterministic checker means the verified-good/bad labels are reproducible exactly; model decisions are
-stochastic (temperature $0.7$, $3$ reps). Total API cost was $\approx$US\$1.2. See the repository
-\texttt{README} for run order and the environment note (the dataset is loaded directly from the
-HuggingFace JSONL to avoid a \texttt{datasets}/\texttt{fsspec} incompatibility).
+deterministic checker means the verified-good and verified-bad labels are reproducible exactly;
+model decisions are stochastic (temperature $0.7$, $3$ reps). See the repository \texttt{README}
+for run order and the environment note (the dataset is loaded directly from the HuggingFace JSONL
+to avoid a \texttt{datasets}/\texttt{fsspec} incompatibility).
 
 \bibliographystyle{plainnat}
 \bibliography{refs}
