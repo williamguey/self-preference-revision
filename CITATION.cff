@@ -11,7 +11,7 @@ authors:
 version: "1.0.0"
 date-released: "2026-06-18"
 license: MIT
-repository-code: "https://github.com/USER/REPO"   # TODO: set repo URL
+repository-code: "https://github.com/williamguey/self-preference-revision"
 url: "https://arxiv.org/abs/XXXX.XXXXX"            # TODO: set arXiv id after posting
 keywords:
   - large language models
