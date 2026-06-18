@@ -1,4 +1,4 @@
-# LLM Self-Anchoring on IFEval — Pilot Findings (v1 + v2)
+# LLM Self-Anchoring on IFEval, Pilot Findings (v1 + v2)
 
 **Question.** Does an LLM reject *valid* fixes to its OWN writing more than identical
 fixes to ANOTHER model's writing? "Anchoring gap" = acceptance(own) − acceptance(other).
@@ -11,14 +11,14 @@ Meaningfully negative ⇒ self-anchoring.
   registry (`instructions_registry.INSTRUCTION_DICT`), called via the strict-eval
   loop. Known-answer self-tested (pass/fail/single-constraint-flip all correct).
 - Models (OpenRouter): `openai/gpt-4o-mini`, `anthropic/claude-3.5-haiku` (mid-tier
-  on purpose — frontier models ceiling out on IFEval).
+  on purpose, frontier models ceiling out on IFEval).
 - Fix labels (GOOD/BAD/NEUTRAL) are assigned by the CHECKER, never a model:
   GOOD = flips a failed constraint to pass, breaks none; BAD = breaks a passing
   constraint; NEUTRAL = no change in outcomes.
 
 ---
 
-## Pilot v1 — TOLD label ("a draft YOU wrote" vs "ANOTHER AI model")
+## Pilot v1, TOLD label ("a draft YOU wrote" vs "ANOTHER AI model")
 
 Same decider judges the same draft+fixes under two byte-identical framings differing
 in one sentence. 11 kept drafts, full-revised-text shown, 3 reps × 2 deciders.
@@ -31,14 +31,14 @@ in one sentence. 11 kept drafts, full-revised-text shown, 3 reps × 2 deciders.
   skipped (not fabricated). IFEval's editable constraints are too *independent* to
   produce natural cross-constraint BAD fixes.
 - **Confound discovered:** ~half of all GOOD-fix rejections (both framings) were
-  "redundant / duplicate / no change" — an artifact of showing 4 near-duplicate
+  "redundant / duplicate / no change", an artifact of showing 4 near-duplicate
   fixes per draft. This deflated the baseline (~44%) and widened the CI.
 - **Qualitative:** OWN and OTHER rejected at near-identical rates *and for the same
   reasons*. No ownership-specific rationalization.
 
 ---
 
-## Pilot v2 — REAL in-context authorship (the strong test)
+## Pilot v2, REAL in-context authorship (the strong test)
 
 Condition **X (author):** the same model decides ACCEPT/REJECT inside its own
 conversation (system+prompt+its draft as the assistant turn+the edit question).
@@ -60,7 +60,7 @@ analysis, paired bootstrap CI.
 - Acceptance jumped 44% → **84%** vs v1, confirming the redundancy confound (not
   authorship) drove v1's low/noisy baseline.
 - **Fingerprint** (author rejects own good fix while fresh accepts): 6 drafts;
-  mirror (fresh rejects, author accepts): 4 drafts — balanced. The author's reasons
+  mirror (fresh rejects, author accepts): 4 drafts, balanced. The author's reasons
   are mostly *stricter-than-checker* objections (e.g. "the edit uses lowercase but
   the task needs all caps"; "nested triple quotes break the double-quote rule"),
   i.e. **self-skepticism, not self-defense.** Only 2 mild self-preference reasons,
@@ -78,11 +78,11 @@ distribution.
 
 Secondary, paper-worthy observation: under real authorship these mid-tier models
 sometimes critique their *own* output **more** harshly than a fresh model does
-(catching verifier blind spots) — closer to self-skepticism than self-anchoring.
+(catching verifier blind spots), closer to self-skepticism than self-anchoring.
 
 ## Recommended pivots (from the verdict text)
 1. **Reframe** the headline from "self-anchoring exists" to "self-anchoring is
-   fragile/absent in mid-tier instruction-following" — a clean null with a strong
+   fragile/absent in mid-tier instruction-following", a clean null with a strong
    test behind it.
 2. **Mechanism / sycophancy angle** instead of the anchoring headline (the W-cell
    and sycophancy directions).
@@ -92,7 +92,7 @@ sometimes critique their *own* output **more** harshly than a fresh model does
 
 ---
 
-## Pilot v3 — powered self-skepticism reversal, 4 families (the test of the v2 hint)
+## Pilot v3, powered self-skepticism reversal, 4 families (the test of the v2 hint)
 
 The v2 leftover hint (author harsher on its own work: 6 vs 4 on 27 drafts) was
 underpowered and used 2 models. v3 scales to **85 usable drafts** across **4 mid-tier
@@ -102,7 +102,7 @@ families** (gpt-4o-mini, claude-3.5-haiku, gemini-2.5-flash-lite, llama-3.3-70b;
 harsher on own work). Fresh decider = a *different* family, rotated.
 
 **Pooled gap = −5.1pp** (author_reject 15.3% vs fresh_reject 20.4%), **95% CI
-[−12.9, +2.7]pp** — includes 0. The hint **did not replicate**; the point estimate
+[−12.9, +2.7]pp**, includes 0. The hint **did not replicate**; the point estimate
 even flipped slightly negative (authors a touch *more* accepting of fixes to their
 own drafts than fresh models).
 
@@ -125,9 +125,9 @@ fully deconfound this.
 
 **The one robust, clean finding (qualitative):** of 39 author self-rejections,
 **97.4% (38/39) were STRICTER-than-checker** (catching a real flaw the verifier/fresh
-missed — e.g. "the edit includes Sarah but breaks the limerick's AABBA scheme"), only
+missed, e.g. "the edit includes Sarah but breaks the limerick's AABBA scheme"), only
 1 mere preference. So *when* an author rejects a fix to its own work, it is almost
-never "I like mine better" — it is flaw-catching. The mechanism is real; the net
+never "I like mine better", it is flaw-catching. The mechanism is real; the net
 *rate* just isn't higher than a fresh model's.
 
 **Verdict (v3):** point estimate −5.1pp sits right at the −0.05 boundary with a CI
@@ -144,4 +144,3 @@ stricter-than-checker), not a higher self-rejection rate.
 and the pipeline scripts (`sample_prompts.py`, `run_v2_prep.py`, `run_v2_decide.py`,
 `ifeval_checker.py`, `or_client.py`).
 
-**Total cost both pilots: ~$0.55** (well under budget).

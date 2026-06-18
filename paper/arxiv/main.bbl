@@ -1,0 +1,96 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Choi et~al.(2026)Choi, Zhu, and Li]{choi2026identity}
+Hyeong~Kyu Choi, Xiaojin Zhu, and Yixuan Li.
+\newblock When identity skews debate: Anonymization for bias-reduced
+  multi-agent reasoning.
+\newblock In \emph{Proceedings of the Annual Meeting of the Association for
+  Computational Linguistics (ACL)}, 2026.
+\newblock arXiv:2510.07517.
+
+\bibitem[Huang et~al.(2024)Huang, Chen, Mishra, Zheng, Yu, Song, and
+  Zhou]{huang2024large}
+Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu~Steven Zheng, Adams~Wei Yu,
+  Xinying Song, and Denny Zhou.
+\newblock Large language models cannot self-correct reasoning yet.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2024.
+\newblock arXiv:2310.01798.
+
+\bibitem[Jiang et~al.(2025)Jiang, Zhang, Wang, Andrews, and
+  Khashabi]{jiang2025feedback}
+Dongwei Jiang, Alvin Zhang, Andrew Wang, Nicholas Andrews, and Daniel Khashabi.
+\newblock Feedback friction: {LLMs} struggle to fully incorporate external
+  feedback, 2025.
+\newblock arXiv:2506.11930.
+
+\bibitem[Kamoi et~al.(2024)Kamoi, Zhang, Zhang, Han, and Zhang]{kamoi2024when}
+Ryo Kamoi, Yusen Zhang, Nan Zhang, Jiawei Han, and Rui Zhang.
+\newblock When can {LLMs} actually correct their own mistakes? a critical
+  survey of self-correction of {LLMs}.
+\newblock \emph{Transactions of the Association for Computational Linguistics
+  (TACL)}, 12:\penalty0 1417--1440, 2024.
+\newblock arXiv:2406.01297.
+
+\bibitem[Kim and Khashabi(2025)]{kim2025challenging}
+Sung~Won Kim and Daniel Khashabi.
+\newblock Challenging the evaluator: {LLM} sycophancy under user rebuttal.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  EMNLP}, 2025.
+\newblock arXiv:2509.16533.
+
+\bibitem[Madaan et~al.(2023)Madaan, Tandon, Gupta, Hallinan, Gao, Wiegreffe,
+  Alon, Dziri, Prabhumoye, Yang, and Clark]{madaan2023selfrefine}
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah
+  Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, and Peter
+  Clark.
+\newblock Self-refine: Iterative refinement with self-feedback.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+\newblock arXiv:2303.17651.
+
+\bibitem[Panickssery et~al.(2024)Panickssery, Bowman, and
+  Feng]{panickssery2024llm}
+Arjun Panickssery, Samuel~R. Bowman, and Shi Feng.
+\newblock {LLM} evaluators recognize and favor their own generations.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2024.
+\newblock arXiv:2404.13076.
+
+\bibitem[Song(2026)]{song2026crosscontext}
+Tae-Eun Song.
+\newblock Cross-context review: Improving {LLM} output quality by separating
+  production and review sessions, 2026.
+\newblock arXiv:2603.12123.
+
+\bibitem[Xu et~al.(2024)Xu, Zhu, Zhao, Pan, Li, and Wang]{xu2024pride}
+Wenda Xu, Guanglei Zhu, Xuandong Zhao, Liangming Pan, Lei Li, and William~Yang
+  Wang.
+\newblock Pride and prejudice: {LLM} amplifies self-bias in self-refinement.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, 2024.
+\newblock arXiv:2402.11436.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li,
+  Li, Xing, Zhang, Gonzalez, and Stoica]{zheng2023judging}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao
+  Zhuang, Zi~Lin, Zhuohan Li, Dacheng Li, Eric~P. Xing, Hao Zhang, Joseph~E.
+  Gonzalez, and Ion Stoica.
+\newblock Judging {LLM}-as-a-judge with {MT}-bench and chatbot arena.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+\newblock arXiv:2306.05685.
+
+\bibitem[Zhou et~al.(2023)Zhou, Lu, Mishra, Brahma, Basu, Luan, Zhou, and
+  Hou]{zhou2023instruction}
+Jeffrey Zhou, Tianjian Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu,
+  Yi~Luan, Denny Zhou, and Le~Hou.
+\newblock Instruction-following evaluation for large language models, 2023.
+\newblock arXiv:2311.07911.
+
+\end{thebibliography}

@@ -1,4 +1,4 @@
-BUILD NOTES — arXiv preprint + GitHub release (autonomous build, 2026-06-18)
+BUILD NOTES, arXiv preprint + GitHub release (autonomous build, 2026-06-18)
 ============================================================================
 All numbers in the paper are taken verbatim from the committed result files
 (results/results.json, results_v2.json, results_v3.json, SUMMARY_v3.txt) and
@@ -9,36 +9,36 @@ FINDINGS.md. No numbers or claims were invented.
 ------------------------------------------------------------------------------
 Checked live on 2026-06-18. Result per reference:
 
- [1] Panickssery, Bowman, Feng — "LLM Evaluators Recognize and Favor Their Own
-     Generations." NeurIPS 2024, arXiv:2404.13076.            VERIFIED — holds.
- [2] Xu, Zhu, Zhao, Pan, Li, Wang — "Pride and Prejudice: LLM Amplifies Self-Bias
-     in Self-Refinement." ACL 2024 (Long), arXiv:2402.11436.  VERIFIED — holds
+ [1] Panickssery, Bowman, Feng, "LLM Evaluators Recognize and Favor Their Own
+     Generations." NeurIPS 2024, arXiv:2404.13076.            VERIFIED, holds.
+ [2] Xu, Zhu, Zhao, Pan, Li, Wang, "Pride and Prejudice: LLM Amplifies Self-Bias
+     in Self-Refinement." ACL 2024 (Long), arXiv:2402.11436.  VERIFIED, holds
      (ACL Anthology 2024.acl-long.826).
- [3] Choi, Zhu, Li — arXiv:2510.07517.                        VERIFIED (re-checked).
+ [3] Choi, Zhu, Li, arXiv:2510.07517.                        VERIFIED (re-checked).
      * Re-checked directly on the arXiv abstract page (2026-06-18): title
        "When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent
        Reasoning" and venue "ACL 2026 Main" are CONFIRMED (matches the original
        spec). An earlier keyword search had surfaced a stale alternate title;
        the abstract page is authoritative. Flag REMOVED; cited as ACL 2026.
- [4] Kim, Khashabi — "Challenging the Evaluator: LLM Sycophancy Under User
-     Rebuttal." Findings of EMNLP 2025, arXiv:2509.16533.     VERIFIED — holds
+ [4] Kim, Khashabi, "Challenging the Evaluator: LLM Sycophancy Under User
+     Rebuttal." Findings of EMNLP 2025, arXiv:2509.16533.     VERIFIED, holds
      (ACL Anthology 2025.findings-emnlp.1222; first author Sung Won Kim).
- [5] Jiang, Zhang, Wang, Andrews, Khashabi — "Feedback Friction: LLMs Struggle to
+ [5] Jiang, Zhang, Wang, Andrews, Khashabi, "Feedback Friction: LLMs Struggle to
      Fully Incorporate External Feedback." 2025, arXiv:2506.11930. VERIFIED.
- [6] Song — "Cross-Context Review: ..." 2026, arXiv:2603.12123.  VERIFIED (re-checked).
+ [6] Song, "Cross-Context Review: ..." 2026, arXiv:2603.12123.  VERIFIED (re-checked).
      * Re-checked on the arXiv abstract page (2026-06-18): title, author
        Tae-Eun Song, Mar-2026 submission, and abstract all confirmed. Flag REMOVED.
- [7] Kamoi, Zhang, Zhang, Han, Zhang — "When Can LLMs Actually Correct Their Own
-     Mistakes?" TACL 2024, arXiv:2406.01297.                  VERIFIED — holds.
- [8] Zhou et al. — "Instruction-Following Evaluation for LLMs" (IFEval). 2023,
-     arXiv:2311.07911.                                        VERIFIED — holds.
+ [7] Kamoi, Zhang, Zhang, Han, Zhang, "When Can LLMs Actually Correct Their Own
+     Mistakes?" TACL 2024, arXiv:2406.01297.                  VERIFIED, holds.
+ [8] Zhou et al., "Instruction-Following Evaluation for LLMs" (IFEval). 2023,
+     arXiv:2311.07911.                                        VERIFIED, holds.
 
 ADDED (user request "a couple more verifiable citations"), each web-verified:
- [9]  Zheng et al. — "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena."
+ [9]  Zheng et al., "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena."
       NeurIPS 2023, arXiv:2306.05685 (documents the self-enhancement bias). VERIFIED.
- [10] Madaan et al. — "Self-Refine: Iterative Refinement with Self-Feedback."
+ [10] Madaan et al., "Self-Refine: Iterative Refinement with Self-Feedback."
       NeurIPS 2023, arXiv:2303.17651. VERIFIED.
- [11] Huang et al. — "Large Language Models Cannot Self-Correct Reasoning Yet."
+ [11] Huang et al., "Large Language Models Cannot Self-Correct Reasoning Yet."
       ICLR 2024, arXiv:2310.01798. VERIFIED.
 
 All 11 citations are now web-verified; NO [TODO: human-verify] flags remain.
@@ -52,7 +52,7 @@ FINALIZED:
 ONLY REMAINING (optional, after posting to arXiv): add the arXiv id if/where wanted.
 
 ------------------------------------------------------------------------------
-2. SECURITY — secret scan
+2. SECURITY, secret scan
 ------------------------------------------------------------------------------
 * The OpenRouter key was previously hard-coded as a fallback in or_client.py.
   REMOVED. or_client.py now reads ONLY os.environ["OPENROUTER_API_KEY"] and

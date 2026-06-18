@@ -16,7 +16,7 @@ inside its own conversation) rather than a told "you wrote this" label.
 
 **Headline result (null):** across 4 mid-tier model families and 85 author-vs-fresh
 comparisons, authors reject verified-good fixes to their own drafts at essentially the same
-rate as fresh models — self-preference gap **−5.1 pp, 95% CI [−12.9, +2.7]** (includes 0).
+rate as fresh models, self-preference gap **−5.1 pp, 95% CI [−12.9, +2.7]** (includes 0).
 A self-skepticism hint from a smaller pilot did **not** replicate. The one robust observation
 is qualitative: when authors *do* reject a verified-good fix, **97.4% (38/39)** of reasons are
 flaw-catching, not preference. Effects smaller than ~13 pp cannot be excluded at this N.
@@ -28,6 +28,7 @@ See [`FINDINGS.md`](FINDINGS.md) for the full v1/v2/v3 write-up and
 
 ```
 paper/        main.tex, refs.bib, main.pdf      (the preprint)
+paper/arxiv/  ready-to-upload arXiv source (main.tex, refs.bib, main.bbl) + arxiv_submission.zip
 scripts/      the full pipeline + vendored official IFEval checker
 results/      committed outputs of our run (all raw decisions, reasons, checker labels)
 data/         note on IFEval loading (data is fetched at runtime, not committed)
@@ -62,7 +63,7 @@ sampling `SEED=42`, bootstrap `seed=12345`.
 ```bash
 cd scripts
 
-# --- P3: the powered four-model headline test (~US$0.70) ---
+# --- P3: the powered four-model headline test ---
 python run_v3_prep.py          # drafts across 4 families x {normal,rushed}; one verified-GOOD fix each
 python run_v3_prep_topup.py    # expand prompt pool to reach the N target
 python run_v3_decide.py        # author (in-context) vs fresh decisions; gap, CI, per-family, verdict
@@ -80,7 +81,6 @@ python phase3_decider.py
 python phase4_analyze.py       # -> results.json
 ```
 
-Total API cost for all three pilots was **~US$1.2** (P3 alone ~US$0.70), on mid-tier models.
 Mid-tier is deliberate: frontier models nearly ceiling out IFEval and leave few fixable errors.
 
 ## Method in one paragraph
@@ -90,7 +90,7 @@ For each prompt a model writes a draft; the official IFEval checker confirms the
 description and keep **exactly one** edit the checker verifies as GOOD (fixes the failed
 constraint, breaks no passing one). The draft+fix is then judged ACCEPT/REJECT by (X) the
 **author** model inside its own generation conversation and (Z) a **fresh** different family
-seeing the draft neutrally — 3 reps each at temperature 0.7, with one-line reasons captured.
+seeing the draft neutrally, 3 reps each at temperature 0.7, with one-line reasons captured.
 The self-preference gap is the difference in rejection rates of these verified-good fixes.
 
 ## Licensing

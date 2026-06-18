@@ -68,8 +68,9 @@ def render_edits(shown, order):
     return "\n\n".join(parts)
 
 
-LINE_RE = re.compile(r"(\d+)\s*[\.\):]?\s*\**\s*(ACCEPT|REJECT)\b[\s\.:\-–—]*(.*)",
-                     re.I)
+_DASHES = chr(0x2013) + chr(0x2014)  # en/em dash: matched in model output, not written literally
+LINE_RE = re.compile(
+    r"(\d+)\s*[\.\):]?\s*\**\s*(ACCEPT|REJECT)\b[\s\.:\-" + _DASHES + r"]*(.*)", re.I)
 
 
 def parse(text, n):
